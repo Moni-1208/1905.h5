@@ -41,7 +41,7 @@ class PreventController extends Controller
     }
 
     // 接收 api1905 pass/test 解密
-    public function test()
+    public function tests()
     {
         print_r($_GET);
 

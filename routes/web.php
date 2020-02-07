@@ -18,3 +18,5 @@ Route::get('/', function () {
 
 // 获取用户信息接口
 Route::get('test/prevent','Test\PreventController@prevent');
+
+Route::get('test/tests','Test\PreventController@tests');
