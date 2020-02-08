@@ -40,7 +40,7 @@ class PreventController extends Controller
     	echo 'count:'.$count;
     }
 
-    // 接收 api1905 pass/test 解密
+    // 接收 api1905 pass/test 解密 get
     public function tests()
     {
         print_r($_GET);
@@ -61,5 +61,19 @@ class PreventController extends Controller
         }else{
             echo "验签失败";
         }
+    }
+
+    // 签名解密
+    // 接收 api1905 pass/md5post 解密 post
+    public function md5post()
+    {
+        $enc_data=$_POST['enc_data'];
+
+        $method='AES-256-CBC';
+        $key='1905';
+        $iv='qwertyuiop123456';
+
+        $dec_data=openssl_decrypt($enc_data, $method, $key,OPENSSL_RAW_DATA,$iv);
+        echo "解密后为：".$dec_data;
     }
 }

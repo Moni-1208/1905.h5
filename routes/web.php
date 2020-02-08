@@ -20,3 +20,4 @@ Route::get('/', function () {
 Route::get('test/prevent','Test\PreventController@prevent');
 
 Route::get('test/tests','Test\PreventController@tests');
+Route::post('test/md5post','Test\PreventController@md5post');
